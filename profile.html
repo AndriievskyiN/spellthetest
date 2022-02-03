@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% block title %}Profile{% endblock %} {% block content%}
+<h1>Profile</h1>
+<br/>
+<div class="card">
+    <div class="card-header">
+      Hello {{current_user.first_name}}!
+    </div>
+    <div class="card-body">
+      <p class="card-text"><strong>Name:  </strong>{{current_user.first_name}}<br/>
+        <strong>Email:  </strong>{{current_user.email}}<br/>
+        <strong>Date Added:  </strong>{{current_user.date_added}}<br/>
+        <a id="statisctics" href="{{url_for('auth.statistics')}}">Click here to view yor statistics</a><br/>
+        <br/>
+      <a href="{{url_for('auth.logout')}}" class="btn btn-secondary btn-sm">Logout</a>
+    </div>
+  </div>
+{%endblock%}
